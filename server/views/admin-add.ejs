@@ -1,0 +1,79 @@
+<%- include('parts/html-head') %>
+<%- include('parts/navbar') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="card" >
+        <div class="card-body">
+          <h5 class="card-title">新增會員資料</h5>
+          <form name="form1" onsubmit="postForm(event)">
+            <div class="mb-3">
+              <label for="name" class="form-label">姓名 </label>
+              <input type="text" class="form-control" id="name" name="name">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">信箱 </label>
+              <input type="email" class="form-control" id="email" name="email" required>
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="mobile" class="form-label">手機 </label>
+              <input type="text" class="form-control" id="mobile" name="mobile" pattern="09\d{2}?\d{3}?\d{3}">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="birthday" class="form-label">生日 </label>
+              <input type="date" class="form-control" id="birthday" name="birthday">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">地址 </label>
+              <textarea  class="form-control" id="address" name="address" cols="30" rows="3"></textarea>
+              <div class="form-text"></div>
+            </div>
+            <!-- <div class="mb-3">
+              <label for="pet_type" class="form-label">寵物種類 </label>
+              <select name="pet_type" id="pet_type" class="form-select">
+                <option value="0" <%= "pet_type" == 0 ? 'selected' : '' %>>狗</option>
+                <option value="1" <%= "pet_type" == 1 ? 'selected' : '' %>>貓</option>
+                <option value="2" <%= "pet_type" == 2 ? 'selected' : '' %>>其他</option>
+              </select>
+            </div> -->
+            <button type="submit" class="btn btn-primary">送出</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('parts/scripts') %>
+<script>
+  function postForm(event){
+    event.preventDefault();
+
+    //TODO: 資料檢查
+    const fd = new FormData(document.form1);
+    fetch('',{    //('')空字串-> 代表路徑url與原本的路徑url相同
+      method:'POST',
+      body: fd
+    })
+      .then(r=>r.json())
+      .then(data=>{
+        console.log(data);
+        if(data.success){
+          alert('新增成功');
+          location.href = '/member';
+        }else{
+          alert('新增失敗');
+        }
+      });
+
+
+  }
+
+
+</script>
+<%- include('parts/html-foot') %>

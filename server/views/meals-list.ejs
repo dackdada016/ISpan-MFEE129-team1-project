@@ -1,0 +1,146 @@
+<%- include('parts/html-head') %>
+<%- include('parts/navbar') %>
+
+<div class="container">
+    <div class="row justify-content-end">
+      <div class="col-4">
+          <a class="nav-link" href="/meals/add">新增餐點資料
+            <i class="fa-solid fa-plus"></i>
+          </a>
+      </div>
+      <div class="col-4">
+        <select class="form-select" id="orderby" onchange="changeParams()">
+          <option value="product_id_asc">預設(編號升冪)</option>
+          <option value="product_id_desc">編號降冪</option>
+        </select>
+      </div>
+      <div class="col-4">
+        <form class="d-flex" role="search" onsubmit="changeParams(event)">
+          <input class="form-control me-2" type="search" name="search" placeholder="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th scope="col">餐點編號</th>
+              <th scope="col">分類</th>
+              <th scope="col">餐點圖片</th>
+              <th scope="col">餐點名稱</th>
+              <th scope="col">餐點類型</th>
+              <th scope="col">餐點價格</th>
+              <th scope="col">販售單位</th>
+              <th scope="col">刪除</th>
+              <th scope="col">修改</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(let r of rows){ %>  <!--這邊不輸出，所以不加-或=-->
+            <tr>
+              <td><%=r.product_id %></td>
+              <td><%=r.product_type==1 ? '商品' : r.product_type==2 ? '課程' : r.product_type==3 ? '住宿' : r.product_type==4 ? '餐點' : '活動'  %></td>
+              <td><img src="/<%= r.product_image %>" width="200" class="product_image"></td>
+              <td><%=r.product_name %></td>
+              <td><%=r.product_class %></td>
+              <td><%=r.product_price %></td>
+              <td><%=r.product_unit %></td>
+               <td>
+              <a href="javascript:deleteItem(<%= r.product_id%>)">
+                <i class="fa-solid fa-trash"></i>
+              </a>
+            </td>
+            <td>
+              <a href="<%= baseUrl %>/edit/<%= r.product_id %>">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </a>
+            </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table> 
+      </div>
+    </div>
+
+
+  <div class="row">
+    <div class="col">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item <%= page == 1 ? 'disabled' : '' %>">
+            <a class="page-link" href="?page=<%= page == 1 %>">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          
+          <% for(let i=page-5; i<=page+5;i++)
+          if(i>=1 && i<=totalPages){ %>
+          <li class="page-item <%= i==page ? 'active' : '' %>">
+            <a class="page-link" href="?page=<%= i %>"><%= i %></a>
+            </li>
+          <% } %>
+         
+          <li class="page-item <%= page == totalPages ? 'disabled' : '' %>">
+            <a class="page-link" href="?page=<%= totalPages %>">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>t
+
+<%- include('parts/scripts') %>
+<script>
+  //前端生關鍵字
+  const usp = new URLSearchParams(location.search);
+  const searchInput = document.querySelector('input[name=search]');
+  const orderbySel = document.querySelector('#orderby');
+
+  if(usp.get('search')){
+    //把之前的關鍵字放回輸入欄裡
+    searchInput.value = usp.get('search');
+  }
+  if(usp.get('orderby')){
+    //把之前的關鍵字放回輸入欄裡
+    orderbySel.value = usp.get('orderby');
+  }
+  //跳到第幾頁
+  const gotoPage = (page)=>{     //page->跳到第幾頁
+    usp.set('page', page);        //(key,value)->('page'=參數， page=傳進來的page); 保留原本的參數
+    location.href = '?' + usp.toString(); //從'?'開頭=>頁面與原設定的url相同，只需換掉參數即可
+
+
+  }
+
+  //設定關鍵字，或變更順序
+  const changeParams = (event=null)=>{
+    
+    if(event) event.preventDefault(); //若有event->就加e.pd; 沒有就不須呼叫
+    usp.set('page', 1);  //變更排序，先將原本的設定刪除，設定回到第一頁
+    usp.set('orderby', orderbySel.value);
+    usp.set('search', searchInput.value);
+    location.href = '?' + usp.toString();
+  }
+
+
+  function deleteItem(product_id){
+    if(! confirm(`是否要刪除編號為 ${product_id} 的資料`)){
+       return;  //回答false->不做->返回 ; true ->往下進行
+    }
+    fetch(`<%= baseUrl %>/${product_id}`,{
+      method:'DELETE'
+    })
+    .then(r=>r.json())
+    .then(data=>{
+      console.log(data);
+      if(data.success){
+        location.reload(); //刪除成功->轉向
+      }
+    })
+  }  
+</script>
+<%- include('parts/html-foot') %>

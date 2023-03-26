@@ -1,0 +1,76 @@
+<div class="container">
+  <nav class="navbar navbar-expand-xl border-bottom border-dark-subtle mb-3">
+    <div class="container-xl">
+      <a class="navbar-brand" href="/">毬</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              會員
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/member/">會員資料</a></li>
+              <li><a class="dropdown-item" href="/orderList/">訂單紀錄</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/room/">房間</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/product/">商品</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/mealS/">餐點</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/course/">課程</a>
+          </li>  -->
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/activity/">活動</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <% if(locals.session && session.user){ %>
+            <li class="nav-item">
+              <a class="nav-link">
+                <%= session.user.name %>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">登出</a>
+            </li>
+
+            <% } else { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">登入</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">註冊</a>
+              </li>
+
+              <% } %>
+        </ul>
+        <!-- <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">
+            Search
+          </button>
+        </form> -->
+      </div>
+    </div>
+  </nav>
+</div>
+  

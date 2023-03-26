@@ -1,0 +1,187 @@
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto ;
+    max-width:100%;
+    height: calc(100vh - 10px);
+    background-color: #47BBE8;
+    padding: 10px 25px;
+    // box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px;
+    text-align: center;
+    .register{
+      background-color: #DAF1FA;
+      width: 100%;
+      margin: auto;
+      height: 100%;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .login-main{
+      background-color: #DAF1FA;
+      width: 60%;
+      margin: auto;
+      height: 100%;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      .afterLogin{
+        width: 100%;
+        a{
+          width: 60%;
+          margin: auto;
+          font-size: 1rem;
+          // color: var(--primary);
+          &:hover{
+            color: var(--text-black);
+          }
+        }
+      }
+          .login-form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: space-around;
+            padding:0 50px;
+            .typeArea{
+              margin: auto;
+              position: relative;
+              flex-direction: column;
+              width: 100%;
+            }
+            .passwordGroup{
+              position:absolute;
+              right: 20px;
+              top: 77%;
+              transform: translateY(-23%);
+              color: #515151;
+          }
+            .login-label{
+              border-radius: 15px;
+              font-size: 20px;
+              color: #c9c9c9;
+              width:100%;
+              border-color: var(--primary);
+              input{
+                margin:5px;
+                padding: 10px;
+                width: 100%;
+                border-color: 1px solid var(--field-frame);
+                &:focus{
+                  border:5px solid var(--field-frame);
+                  outline: none !important;
+                  // box-shadow: 0 0 0 0.25rem rgb(237 176 24/25%);
+                }
+              }
+            }
+            .function {
+              margin: 10px 0;
+              text-align: right;
+              p{
+              font-size: 14px;
+              }
+            }
+          }
+        .other{
+          padding: 10px;
+          margin: 10px;
+          border-top: 3px solid #47BBE8 ;
+          // border-color: var(#47BBE8);
+          .register{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-black);
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+        // .memberlist{
+        //   display: flex;
+        //   flex-direction: column;
+        .editMember{
+          border-bottom: 3px solid #47BBE8 ;
+        }
+        .changePassword{
+          border-bottom: 3px solid #47BBE8 ;
+        }
+        .myList{
+          border-bottom: 3px solid #47BBE8 ;
+        }
+        .orderList{
+          border-bottom: 3px solid #47BBE8 ;
+        }
+        .activityRecord{
+          border-bottom: 3px solid #47BBE8 ;
+        }
+      // }
+    } 
+  }   
+  // .memberlist{
+  //     display: flex;
+  //     flex-direction: column;
+  // }
+  
+  @media screen  and (max-width:768px) {
+    .login-container{
+      .login-main{
+        background-color: #DAF1FA;
+        width: 80%;
+        height: 100%;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        .login-form {
+          .passwordGroup {
+            right: 10%;
+            left: 75%;
+          }
+          .passwordGroup2 {
+            top: 60%;
+            right: 10%;
+            left: 75%;
+          }
+        }
+      }
+    }
+  }
+  @media screen  and (max-width:376px) {
+    .login-container{
+      .login-main{
+        background-color: #DAF1FA;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        .login-form{
+          .passwordGroup {
+            right: 5%;
+            left: 70%;
+          }
+          .passwordGroup2 {
+            top: 65%;
+            right: 5%;
+            left: 70%;
+          }
+        }
+      }
+    }
+  }

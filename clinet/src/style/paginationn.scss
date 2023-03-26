@@ -1,0 +1,36 @@
+.pagination-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 150px 0  100px 0;
+
+
+}
+
+.nothing{
+    width: 40px;
+    height: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0 10px;
+    border-radius: 50%;
+    // cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: var(--text-black);
+    border: none;
+}
+
+.active {
+    @extend .nothing;
+    font-weight: 900;
+    background: var(--secondary);
+    
+}
+
+.page-btn-next{
+    @extend .nothing;
+    &:hover{
+        background: var(--secondary);
+    }
+}

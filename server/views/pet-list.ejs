@@ -1,0 +1,36 @@
+<%- include('parts/html-head') %>
+<%- include('parts/navbar') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">寵物編號</th>
+            <th scope="col">姓名</th>
+            <th scope="col">主人</th>
+            <th scope="col">生日</th>
+            <th scope="col">種類</th>
+            <th scope="col">性別</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let r of rows){ %>
+          <tr>
+            <td><%=r.pet_id %></td>
+            <td><%=r.name %></td>
+            <td><%=r.mName %></td>
+            <td><%= r.birthday && toDateString(r.birthday) %></td>
+            <td><%= r.type==0 ? '貓' : r.type==1 ? "狗" : "其他" %></td>
+            <td><%= r.gender==0 ? '男' :'女' %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%- include('parts/scripts') %>
+<%- include('parts/html-foot') %>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cart</title>
+    <link rel="stylesheet" href="checkoutFlow.css" />
+  </head>
+
+  <body>
+    <header></header>
+    <aside class="order-step-guide">
+      <div class="row">
+        <div class="col">
+          <div class="step1">1</div>
+          <div class="steptext">確認商品</div>
+        </div>
+        <div class="stepline"></div>
+        <div class="col">
+          <div class="step2">2</div>
+          <div class="steptext">填寫資料</div>
+        </div>
+        <div class="stepline"></div>
+        <div class="col">
+          <div class="step3">3</div>
+          <div class="steptext">訂購成功</div>
+        </div>
+      </div>
+    </aside>
+    <main>
+      <div class="tabs">
+        <input
+          type="radio"
+          class="tabs__radio"
+          name="tabs-example"
+          id="tab1"
+          checked
+        />
+        <label for="tab1" class="tabs__label">商城</label>
+        <div class="tabs__content">
+          <table>
+            <thead>
+              <th>商品圖</th>
+              <th>名稱</th>
+              <th>規格</th>
+              <th>價格</th>
+              <th>數量</th>
+              <th>小計</th>
+              <th>操作</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="https://picsum.photos/id/237/90/90" alt="" /></td>
+                <td>狗飼料</td>
+                <td>200g/包</td>
+                <td>NT.300</td>
+                <td>1</td>
+                <td>NT300</td>
+                <td>從購物車刪除</td>
+              </tr>
+              <tr>
+                <td><img src="https://picsum.photos/id/237/90/90" alt="" /></td>
+                <td>狗飼料</td>
+                <td>200g/包</td>
+                <td>NT.300</td>
+                <td>1</td>
+                <td>NT300</td>
+                <td>從購物車刪除</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <input type="radio" class="tabs__radio" name="tabs-example" id="tab2" />
+        <label for="tab2" class="tabs__label">課程</label>
+        <div class="tabs__content">
+          <table>
+            <thead>
+              <tr>
+                <th>商品圖</th>
+                <th>名稱</th>
+                <th>規格</th>
+                <th>價格</th>
+                <th>數量</th>
+                <th>小計</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tr>
+              <td><img src="https://picsum.photos/90/90?pet" alt="" /></td>
+              <td>狗飼料</td>
+              <td>200g/包</td>
+              <td>NT.300</td>
+              <td>1</td>
+              <td>NT300</td>
+              <td>從購物車刪除</td>
+            </tr>
+          </table>
+        </div>
+        <input type="radio" class="tabs__radio" name="tabs-example" id="tab3" />
+        <label for="tab3" class="tabs__label">餐點</label>
+        <input type="radio" class="tabs__radio" name="tabs-example" id="tab4" />
+        <label for="tab4" class="tabs__label">活動</label>
+      </div>
+      <div class="checkout-section">
+        <div class="total-amount">
+          <span>合計 : NT 600</span>
+        </div>
+        <div class="checkout-btn">
+          <button class="continue-shopping-btn">繼續選購</button>
+          <button class="next-step-btn">下一步</button>
+        </div>
+      </div>
+      <section class="recommended-product">
+        <h1>猜你喜歡</h1>
+        <article class="product">
+          <div class="card">
+            <img src="" alt="" />
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,754 @@
+@mixin filterStyle(){
+  position: relative;
+        border-radius: 25px;
+        background-color: #FEFCEB;
+        width: fit-content;
+        height: fit-content;
+        font-size: 1.5vw;
+        font-weight: 400;
+        padding: 10px 15px;
+        transition: 0.5s;
+        border: none;
+        cursor: pointer;
+        margin: 0.5vmax;
+}
+@mixin filterButtonWrapper{
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: flex;
+  flex-direction: column;
+  transform-origin: 50% 0%;
+  opacity: 0;
+  transform: scaleY(0);
+  background-color: #FEFCEB;
+  border-radius: 25px;
+  width: 100%;
+  transition: 0.5s;
+}
+@mixin filterButton(){
+  background: none;
+  border: none;
+  transition: 0.5s;
+   padding: 5px 15px;
+   font-size: 1.5vw;
+}
+.course-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: calc(100% - 10px);
+   height: calc(100vh - 20px);
+    & .upper-part{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        
+      & .searchbar{
+          border-radius: 25px;
+          background-color: #FEFCEB;
+          display: flex;
+          margin: 0.5vmax;
+          & *{
+              outline: none;
+              border: none;
+              background: none;
+              padding: 10px;    
+              font-size: 1.5vw;
+       }
+       #search{
+          width: 15vw;
+       }
+      }
+      & .time-filter{
+      @include filterStyle();
+        & .time-button-wrapper{
+         @include filterButtonWrapper();
+         
+          & button{
+          @include filterButton();
+            &:hover{
+              background-color: #fffacd;
+            }
+          }
+          & #time-ascend-order{
+            border-radius: 25px 25px 0 0;
+          }
+          & #time-descend-order{
+            border-radius: 0 0 25px 25px;
+          }
+        }
+        &:hover{
+          background-color: #fffacd;
+        }
+        &.active{
+          
+          background-color: #fffacd;
+        }
+        &.active .time-button-wrapper{
+          
+          opacity: 1;
+          transform: scaleY(1);
+        }
+      }
+      & .price-filter{
+       @include filterStyle();
+        & .price-button-wrapper{
+         @include filterButtonWrapper();
+         
+          & button{
+           @include filterButton();
+            &:hover{
+              background-color: #fffacd;
+            }
+          }
+          & #price-ascend-order{
+            border-radius: 25px 25px 0 0;
+          }
+          & #price-descend-order{
+            border-radius: 0 0 25px 25px;
+          }
+        }
+        &:hover{
+          background-color: #fffacd;
+        }
+        &.active{
+          
+          background-color: #fffacd;
+        }
+        &.active .price-button-wrapper{
+          
+          opacity: 1;
+          transform: scaleY(1);
+        }
+        
+      }
+     
+      & .course-search-tags{
+        display: flex;
+        .course-search-tag{
+            padding: 5px 15px;
+             background-color: #FCF09A;
+             border-radius: 25px;
+             margin-inline: 0.5vmax;
+             font-size: 1.5vw;
+             border: none;
+             white-space: nowrap;
+             transition: 0.5s;
+             &:hover{
+                filter: brightness(105%);
+             }
+         }
+    }
+         
+    }
+    & .course-enter-search-tag{
+        padding: 0.5vmax 1.5vmax;
+         background-color: #FCF09A;
+         border-radius: 2vmax;
+         margin-inline: 1vmax;
+         border: none;
+         transition: 0.5s;
+         white-space: nowrap;
+         &:hover{
+            filter: brightness(105%);
+         }
+    }
+    
+   
+    & .course-search-results{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 1vmax;
+      width: 100%;
+      height: 80%;
+     
+     & .course-product-card {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          background-color: var(--light-yellow);
+          width: max(360px,29%);
+          margin: 3vmax 1vmax;
+          height: max(290px,46%);
+          border-radius: 15px;
+          padding: 1vmax;
+          & .text-part {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            & .title {
+              position: relative;
+              width: 60%;
+             bottom: 10%;
+              font-size: 24px;
+              font-weight: 900;
+            }
+            & .text-unit{
+              font-size: 20px;
+          }
+            & .description {
+              font-size: var(--font-size-h2);
+              color: var(--text-black);
+              width: 45%;
+              height: 30%;
+              overflow: hidden;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              font-weight: 700;
+              margin-block: 10px 15px;
+            }
+            & .price {
+              font-size: var(--font-size-h2);
+              color: var(--text-black);
+              font-family: sans-serif;
+            }
+          }
+          & .buttons {
+            display: flex;
+            align-items: flex-end;
+            & .button-collection {
+              border: none;
+              background-color: transparent;
+              font-weight: 700;
+              color: var(--text-black);
+              font-size: 28px;
+            }
+            & .button-moreInfo {
+              border: none;
+              background-color: var(--secondary);
+              font-size: var(--font-size-h2);
+              font-weight: 700;
+              color: var(--text-black);
+              border-radius: var(--button-radius-2);
+              padding: 0px 20px;
+              margin-inline: 5px;
+              transition: 0.5s;
+              &:hover{
+                filter: brightness(105%);
+                color: #222222;
+             }
+            }
+          }
+          & img {
+              position: absolute;
+              width: 49%;
+              height: 72%;
+              left: 57%;
+              top: 14%;
+              border-radius: 15px;
+              object-fit: cover;
+            }
+        }
+  }
+   & .photos{
+       
+        padding: 2vmax 2vmax 2vmax 1vmax;
+        height: 60%;
+        display: grid;
+        grid-template-columns: 38% 23% 38%;
+       grid-template-rows: 50% 50%;
+       gap: 1vmax 0.5vmax;
+       .big-photo-one{
+       grid-column: 1 / span 1;
+        grid-row:1 /  span 2;
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+       }
+       .big-photo-two{
+       grid-column: 3 / span 1;
+        grid-row:1 /  span 2;
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+       }
+       .small-photo-one{
+       grid-column: 2 / span 1;
+        grid-row:1 / span 1;
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+       }
+       .small-photo-two{
+        grid-column: 2 / span 1;
+        grid-row:2 / span 1;
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+       }
+    }
+}
+ 
+
+
+
+  
+        
+    
+
+
+
+
+ .course-detail-container{
+    display: flex;
+   min-height: calc(100vh - 20px) ;
+   align-items: flex-end;
+   padding: 1vmax;
+    & .course-detail-photo-wrapper{
+        width: 71%;
+        height: 70vh;
+        margin-inline: 1vmax;
+        & img{
+            width: 100%;
+            height: 100%;
+            border-radius: 0.5vmax;
+            object-fit: cover;
+            object-position: 65%;
+        }
+    }
+    & .course-detail-information{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 55%;
+        height: 70vh;
+        & > *{
+            margin-block: 0;
+        }
+        & .product-button-wrapper{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+ }  
+ @media screen and (width<1440px) {
+  .course-container{
+    
+    
+   
+    
+     & .course-search-results{
+      justify-content: space-between;
+        & .course-product-card {
+          
+            width: max(350px,38%);
+            margin:3vmax 3vmax;      
+            & .text-part {
+               
+                & .title {
+                width: 80%;
+                  font-size: 21px;
+             
+                }
+                & .text-unit{
+                    font-size: 18px;
+                }
+                & .description {
+                  font-size: 18px;
+                
+                  width: 45%;
+                }
+                & .price {
+                  font-size: 18px;
+                
+                }
+              }
+              & .buttons {
+              
+                & .button-collection {
+               
+                  font-size: 22px;
+                }
+                & .button-moreInfo {
+                 
+                  font-size: 16px;
+                
+                }
+              }
+              & img {
+               
+                width: 50%;
+                height: 70%;
+                left: 53%;
+                top: 15%;
+               
+              }
+          }
+       
+    }
+  }
+  .course-detail-container{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2vmax;
+     & .course-detail-photo-wrapper{
+         width: 100%;
+         height: 42vh;
+         margin-inline: 0;
+         & img{
+             width: 100%;
+             height: 100%;
+             border-radius: 0.5vmax;
+         }
+     }
+     & .course-detail-information{
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         width: 100%;
+         height: 70vh;
+         & > *{
+             margin-block: 0;
+         }
+         & .product-button-wrapper{
+             justify-content: space-around;
+         }
+     }
+  }  
+ 
+}
+ @media screen and (width<1250px) {
+    .course-container{
+       & .upper-part{
+          flex-direction: column;
+            justify-content: center;
+            align-items: center;    
+            
+            & .searchbar{          
+              margin: 1vmax;
+              & *{
+                font-size: 2.2vw;
+              }
+          & #search{
+              width: 25vw;
+           }
+          }
+          & .time-filter{
+            margin-block-end: 12vh;
+            font-size: 2.2vw;
+            & .time-button-wrapper{
+            
+            
+            
+             
+              & button{
+             
+                 font-size: 2.2vw;
+               
+              }
+              
+            }
+          }
+          & .price-filter{
+            margin-block-end: 12vh;
+            font-size: 2.2vw;
+            & .price-button-wrapper{
+            
+            
+            
+             
+              & button{
+             
+                 font-size: 2.2vw;
+               
+              }
+              
+            }
+          }
+         
+            & .course-search-tags{
+              & .course-search-tag{
+                    margin-inline: 1vmax;
+                    font-size: 2.2vw;
+                }
+           }
+        }
+      
+     
+       & .photos{
+            grid-template-columns: 50% 50%;
+           grid-template-rows: 50% 50%;
+           gap:0.5vmax;
+           .big-photo-one{
+           grid-column: 1 / span 1;
+            grid-row:1 /  span 1;
+           
+           }
+           .big-photo-two{
+           grid-column: 2 / span 1;
+            grid-row:1 /  span 1;
+          
+           }
+           .small-photo-one{
+           grid-column: 1 / span 1;
+            grid-row:2 / span 1;
+          
+           }
+           .small-photo-two{
+            grid-column: 2 / span 1;
+            grid-row:2 / span 1;
+           
+           }
+        }
+       & .course-search-results{
+        padding: 1.5vmax;
+        height: 60%;
+      
+          & .course-product-card {
+            
+              width: max(270px,35%);
+              height: max(250px,35%);
+              margin:3vmax 1.5vmax;      
+              & .text-part {
+                 
+                  & .title {
+                  width: 80%;
+                    font-size: 21px;
+                    bottom: 5%;
+                  }
+                  & .text-unit{
+                      font-size: 18px;
+                  }
+                  & .description {
+                    font-size: 18px;
+                  
+                    width: 45%;
+                  }
+                  & .price {
+                    font-size: 18px;
+                  
+                  }
+                }
+                & .buttons {
+                
+                  & .button-collection {
+                 
+                    font-size: 22px;
+                  }
+                  & .button-moreInfo {
+                   
+                    font-size: 16px;
+                  
+                  }
+                }
+                & img {
+                 
+                  width: 52%;
+                  height: 65%;
+                  left: 53%;
+                  top: 20%;
+                 
+                }
+            }
+         
+      }
+    }
+    .course-detail-container{
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 2vmax;
+       & .course-detail-photo-wrapper{
+           width: 100%;
+           height: 42vh;
+           margin-inline: 0;
+           & img{
+               width: 100%;
+               height: 100%;
+               border-radius: 0.5vmax;
+           }
+       }
+       & .course-detail-information{
+           display: flex;
+           flex-direction: column;
+           justify-content: space-between;
+           width: 100%;
+           height: 70vh;
+           & > *{
+               margin-block: 0;
+           }
+           & .product-button-wrapper{
+               justify-content: space-around;
+           }
+       }
+    }  
+   
+ }
+ @media screen and (width <=768px){
+  .course-container{
+    
+    & .course-search-results{
+     padding: 1.5vmax;
+       & .course-product-card {
+         
+           width: max(260px,40%);
+           height: max(250px,35%);
+           margin:3vmax 1vmax;      
+           & .text-part {
+              
+               & .title {
+               width: 80%;
+                 font-size: 21px;
+            
+               }
+               & .text-unit{
+                   font-size: 18px;
+               }
+               & .description {
+                 font-size: 18px;
+               
+                 width: 45%;
+               }
+               & .price {
+                 font-size: 18px;
+               
+               }
+             }
+             & .buttons {
+             
+               & .button-collection {
+              
+                 font-size: 22px;
+               }
+               & .button-moreInfo {
+                
+                 font-size: 16px;
+               
+               }
+             }
+             & img {
+              
+               width: 52%;
+               height: 65%;
+               left: 53%;
+               top: 20%;
+              
+             }
+         }
+      
+   }
+ }
+ }
+ @media screen and (width<640px) {
+    .course-container{
+        align-items: center;
+        & .upper-part{
+          flex-direction: column;
+            justify-content: center;
+            align-items: center;    
+          
+            & .searchbar{
+              border-radius: 25px;
+              background-color: #FEFCEB;
+              display: flex;
+              margin: 1vmax;
+              & *{
+                  outline: none;
+                  border: none;
+                  background: none;
+                  padding: 10px;    
+                  font-size: 3.5vw;
+           }
+           & #search{
+              width: 40vw;
+           }
+          }
+          & .time-filter{
+            font-size: 3.5vw;
+            & .time-button-wrapper{
+              & button{
+                font-size: 3.5vw;
+              }
+            } 
+          }
+          & .price-filter{
+            font-size: 3.5vw;
+            & .price-button-wrapper{
+              & button{
+                font-size: 3.5vw;
+              }
+            } 
+          }
+         
+          & .course-search-tags{
+            display: flex;
+            width: 70%;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            .course-search-tag{
+              
+                 margin: 1vmax;
+                 font-size: 3.5vw;
+                
+             }
+        }
+        }
+      
+      
+      & .photos{
+          display: flex;
+          flex-direction: column;
+         & *{
+            margin: 1vmax;
+         }
+        }
+       & .course-search-results{
+          justify-content: center;
+          height: 50%;
+         & .course-product-card {          
+              width: max(300px,75%);
+              height: max(290px,35%);
+              margin: 3vmax 1vmax;
+              & .text-part {
+                 
+                  & .title {
+                  
+                    font-size: 20px;
+                    bottom: none;
+                  }
+                  & .text-unit{
+                      font-size: 16px;
+                  }
+                  & .description {
+                    font-size: 16px;
+                  }
+                  & .price {
+                    font-size: 16px;
+                  
+                  }
+                }
+                & .buttons {
+                
+                  & .button-collection {
+                 
+                    font-size: 20px;
+                  }
+                  & .button-moreInfo {
+                   
+                    font-size: 16px;
+                  
+                  }
+                }
+              & img {
+                  height: 70%;
+                  top: 21%;
+                  left: 55%;
+                }
+            }
+      }
+    }
+   
+ 
+ }

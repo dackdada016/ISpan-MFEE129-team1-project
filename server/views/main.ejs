@@ -1,0 +1,52 @@
+<%- include('parts/html-head') %>
+<%- include('parts/navbar') %>
+
+
+<div class="container">
+  <!-- <h2> <%= name %></h2> -->
+  <div class="p-4 p-md-5 mb-4 mt-4 rounded mb-5">
+    <div class="col-md-6 px-0 text-white">
+      <%- include ("../public/毬.svg") %>
+      <h1 class="display-4 fst-italic mt-5">後台管理</h1>
+    </div>
+  </div>
+
+  <div class="row justify-content-center m-auto">
+    <div class="col-2 ">
+      <p class="fw-normal ">會員</p>
+      <a  href="/member/">
+      <i class="fa-solid fa-user " style="font-size: 100px;color:white;" ></i>
+      </a>
+    </div>
+    <div class="col-2">
+      <p class="fw-normal ">訂單</p>
+      <a  href="/orderList/">
+      <i class="fa-regular fa-rectangle-list" style="font-size: 100px;color:white;"></i>
+    </a>
+    </div>
+    <div class="col-2">
+      <p class="fw-normal">房間</p>
+      <a  href="/room/">
+      <i class="fa-solid fa-house-chimney"style="font-size: 100px;color:white;"></i>
+    </a>
+    </div>
+    <div class="col-2">
+      <p class="fw-normal ">商品</p>
+      <a  href="/product/">
+      <i class="fa-solid fa-paw" style="font-size: 100px;color:white;"></i>
+     </a>
+    </div>
+    <div class="col-2">
+      <p class="fw-normal ">活動</p>
+      <a  href="/activity/">
+      <i class="fa-solid fa-person-skiing-nordic" style="font-size: 100px;color:white;"></i>
+     </a>
+    </div>
+  </div>
+
+</div>
+
+
+
+<%- include('parts/scripts') %>
+<%- include('parts/html-foot') %>

@@ -1,0 +1,74 @@
+<%- include('parts/html-head') %>
+<%- include('parts/navbar') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="card" >
+        <div class="card-body">
+          <h5 class="card-title">新增寵物資料</h5>
+          <form name="form1" onsubmit="postForm(event)">
+            <div class="mb-3">
+              <label for="name" class="form-label">姓名 </label>
+              <input type="text" class="form-control" id="name" name="name">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="birthday" class="form-label">生日 </label>
+              <input type="date" class="form-control" id="birthday" name="birthday">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="type" class="form-label">寵物種類 </label>
+              <select name="type" id="type" class="form-select">
+                <option value="0" <%= "type" == 0 ? 'selected' : '' %>>狗</option>
+                <option value="1" <%= "type" == 1 ? 'selected' : '' %>>貓</option>
+                <option value="2" <%= "type" == 2 ? 'selected' : '' %>>其他</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="gender" class="form-label">性別 </label>
+              <select name="gender" id="gender" class="form-select">
+                <option value="0" <%= "gender" == 0 ? 'selected' : '' %>>男</option>
+                <option value="1" <%= "gender" == 1 ? 'selected' : '' %>>女</option>
+              </select>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <input type="button" class="btn btn-primary me-md-2" onclick="history.back();" value="返回">
+              <button type="submit" class="btn btn-primary">新增</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('parts/scripts') %>
+<script>
+  function postForm(event){
+    event.preventDefault();
+
+    //TODO: 資料檢查
+    const fd = new FormData(document.form1);
+    fetch('',{    //('')空字串-> 代表路徑url與原本的路徑url相同
+      method:'POST',
+      body: fd
+    })
+      .then(r=>r.json())
+      .then(data=>{
+        console.log(data);
+        if(data.success){
+          alert('新增成功');
+          location.href = '/member';
+        }else{
+          alert('新增失敗');
+        }
+      });
+
+
+  }
+
+
+</script>
+<%- include('parts/html-foot') %>

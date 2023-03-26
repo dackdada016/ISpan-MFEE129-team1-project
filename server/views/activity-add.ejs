@@ -1,0 +1,131 @@
+<%- include('parts/html-head') %>
+<%- include('parts/navbar') %>
+
+<div class="container">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-6">
+      <div class="card" >
+        <div class="card-body">
+          <h5 class="card-title">新增活動資料</h5>
+          <form name="form1" onsubmit="postForm(event)">
+            <div class="mb-3">
+              <label for="activity_name" class="form-label">活動名稱 </label>
+              <input type="text" class="form-control" id="activity_name" name="activity_name">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="activity_datestart" class="form-label">活動日期 </label>
+              <input type="date" class="form-control" id="activity_datestart" name="activity_datestart">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="activity_dateend" class="form-label">截止日期 </label>
+              <input type="date" class="form-control" id="activity_dateend" name="activity_dateend">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="activity_pettype" class="form-label">適合寵物類型</label>
+              <select name="activity_pettype" id="activity_pettype" class="form-select">
+                <option value="1" <%= "activity_pettype" == 1 ? 'selected' : '' %>>所有</option>
+                <option value="2" <%= "activity_pettype" == 2 ? 'selected' : '' %>>狗狗</option>
+                <option value="3" <%= "activity_pettype" == 3 ? 'selected' : '' %>>貓貓</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="activity_location" class="form-label">地點 </label>
+              <textarea  class="form-control" id="activity_location" name="activity_location" cols="30" rows="1"></textarea>
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="activity_time" class="form-label">活動時間 </label>
+              <input type="text" class="form-control" id="activity_time" name="activity_time" placeholder="時間:下午/下午0:00-上午/下午0:00">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="activity_decription" class="form-label">活動說明 </label>
+              <textarea  class="form-control" id="activity_decription" name="activity_decription" cols="30" rows="6"></textarea>
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="activity_notice" class="form-label">注意事項 </label>
+              <textarea  class="form-control" id="activity_notice" name="activity_notice" cols="30" rows="6"></textarea>
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="activity_notice2" class="form-label">注意事項 </label>
+              <textarea  class="form-control" id="activity_notice2" name="activity_notice2" cols="30" rows="6"></textarea>
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <textarea type="text" name="activity_image" cols="30" rows="3" class="form-control"></textarea>
+              <br>
+              <label for="activity_image" class="activity_image">選擇圖片</label>
+              <button type="button" onclick="selectFileBtn.click()">選擇圖片</button>
+
+
+            </div>  
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <input type="button" class="btn btn-primary me-md-2" onclick="history.back();" value="返回">
+              <button type="submit" class="btn btn-primary">送出</button>
+            </div>
+          </form>
+          <form name="uploadForm" style="display:none">
+            <input type="file" class="form-control" id="selectFileBtn" name="images" multiple="multiple">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('parts/scripts') %>
+<script>
+  const uploadForm = document.uploadForm;
+  const selectFileBtn = document.querySelector('#selectFileBtn');
+
+  selectFileBtn.onchange = (e)=>{
+    const fd = new FormData(uploadForm);
+
+    fetch('/activity/upload-img',{
+      method: 'POST',
+      body: fd
+    }).then(r=>r.json())
+    .then(ar=>{
+      let ori = document.form1.activity_image.value;
+      ori = ori.split('');
+
+      ar.forEach(f=>{
+        ori.push(f.filename);
+      })
+
+      document.form1.activity_image.value = ori.join(',');
+
+    })
+
+  }
+
+
+  function postForm(event){
+    event.preventDefault();
+
+    //TODO: 資料檢查
+    const fd = new FormData(document.form1);
+    fetch('',{    //('')空字串-> 代表路徑url與原本的路徑url相同
+      method:'POST',
+      body: fd
+    })
+      .then(r=>r.json())
+      .then(data=>{
+        console.log(data);
+        if(data.success){
+          alert('新增成功');
+          location.href = '/activity';
+        }else{
+          alert('新增失敗');
+        }
+      });
+
+
+  }
+</script>
+<%- include('parts/html-foot') %>

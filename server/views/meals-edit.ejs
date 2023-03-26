@@ -1,0 +1,94 @@
+<%- include('parts/html-head') %>
+<%- include('parts/navbar') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="card" >
+        <div class="card-body">
+          <h5 class="card-title">修改餐點資料</h5>
+          <form name="form1" onsubmit="sendForm(event)">
+            <div class="mb-3">
+              <label for="product_type" class="form-label">分類</label>
+              <select name="product_type" id="product_type" class="form-select">
+                
+                <option value="4" <%= "product_type" == 4 ? 'selected' : '' %>>餐點</option>
+              
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="product_name" class="form-label">餐點名稱 </label>
+              <input type="text" class="form-control" id="product_name" name="product_name" value="<%= product_name %>">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="product_class" class="form-label">餐點類型</label>
+              <input type="text" class="form-control" id="product_class" name="product_class" value="<%= product_class %>">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="product_price" class="form-label">餐點價格</label>
+              <input type="number" class="form-control" id="product_price" name="product_price" value="<%= product_price %>">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="product_descripttion" class="form-label">餐點說明 </label>
+              <textarea  class="form-control" id="product_descripttion" name="product_descripttion" cols="30" rows="6"><%= product_descripttion%></textarea>
+              <!-- <textarea  class="form-control" id="product_descripttion2" name="product_descripttion" cols="30" rows="6"><%= product_descripttion%></textarea> -->
+              <div class="form-text"></div>
+            </div>
+             <div class="mb-3">
+              <label for="product_unit" class="form-label">販售單位</label>
+              <input type="text" class="form-control" id="product_unit" name="product_unit" value="<%= product_unit %>">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="product_image" class="product_image">選擇圖片</label>
+              <input type="file" class="form-control" id="product_image" name="product_image">
+              <img src="/<%= product_image %>" width="200" class="product_image mt-3">
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <input type="button" class="btn btn-primary me-md-2" onclick="history.back();" value="返回">
+              <button type="submit" class="btn btn-primary">送出</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('parts/scripts') %>
+<script>
+  const referer = <%- JSON.stringify(referer)%>
+  const locals = <%- JSON.stringify(locals)%> 
+  // const productDescripttion1 = document.getElementById('product_descripttion1').value
+  // const productDescripttion2 = document.getElementById('product_descripttion2').value
+  // const productDescripttion = `<p>${productDescripttion1}</p><p>${productDescripttion2}</p>`
+
+  function sendForm(event){
+    event.preventDefault();
+
+    //TODO: 資料檢查
+    const fd = new FormData(document.form1);
+    fetch('',{    //('')空字串-> 代表路徑url與原本的路徑url相同
+      method:'PUT',
+      body: fd
+    })
+      .then(r=>r.json())
+      .then(data=>{
+        console.log(data);
+        if(data.success){
+          alert('修改成功');
+          location.href = referer;
+        }else{
+          alert('資料沒有修改');
+        }
+      });
+
+
+  }
+
+
+</script>
+<%- include('parts/html-foot') %>

@@ -1,0 +1,89 @@
+<%- include('parts/html-head') %>
+<%- include('parts/navbar') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+        <div class="card" >
+          <div class="card-body">
+            <h5 class="card-title">修改會員資料</h5>
+            <form name="form1" onsubmit="sendForm(event)">
+            <div class="mb-3">
+              <label for="name" class="form-label">姓名 </label>
+              <input type="text" class="form-control" id="name" name="name" required value="<%= name%>">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">信箱 </label>
+              <input type="email" class="form-control" id="email" name="email" required value="<%= email%>" >
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="mobile" class="form-label">手機 </label>
+              <input type="text" class="form-control" id="mobile" name="mobile" pattern="09\d{2}?\d{3}?\d{3}" value="<%= mobile%>">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="birthday" class="form-label">生日 </label>
+              <input type="date" class="form-control" id="birthday" name="birthday" value="<%= birthday ? toDateString(birthday) : ''%>">
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">地址 </label>
+              <textarea  class="form-control" id="address" name="address" cols="30" rows="3"><%= address%></textarea>
+              <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="member_status" class="form-label">會員狀態 </label>
+              <select name="member_status" id="member_status" class="form-select">
+                <option value="0" <%= "member_status" == 0 ? 'selected' : '' %>>停權</option>
+                <option value="1" <%= "member_status" == 1 ? 'selected' : '' %>>正常</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <a class="nav-link" href="/member/addPet/<%= mid%>"><i class="fa-solid fa-plus"></i>新增寵物資訊
+              </a>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <input type="button" class="btn btn-primary me-md-2" onclick="history.back();" value="返回">
+              <button type="submit" class="btn btn-primary">修改</button>
+            </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<%- include('parts/scripts') %>
+<script>
+  const referer = <%- JSON.stringify(referer)%>
+  const locals = <%- JSON.stringify(locals)%> 
+
+  function sendForm(event){
+    event.preventDefault();
+
+    //TODO: 資料檢查
+    const fd = new FormData(document.form1);
+    fetch('',{    //('')空字串-> 代表路徑url與原本的路徑url相同
+      method:'PUT',
+      body: fd
+    })
+      .then(r=>r.json())
+      .then(data=>{
+        console.log(data);
+        if(data.success){
+          alert('修改成功');
+          location.href = referer;
+        }else{
+          alert('資料沒有修改');
+        }
+      });
+
+
+  }
+
+
+</script>
+<%- include('parts/html-foot') %>

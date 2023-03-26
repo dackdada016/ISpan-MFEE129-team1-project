@@ -1,0 +1,46 @@
+@import '_default.scss';
+// 導入bootstrap所有的樣式與預設變數
+@import '~bootstrap/scss/bootstrap';
+// 其他自訂樣式
+@import '_layout.scss';
+@import '_card.scss';
+@import 'reserve.scss';
+@import 'registerMember.scss';
+@import 'editMember.scss';
+@import 'login.scss';
+@import 'orderList.scss';
+@import 'productDetails.scss';
+@import 'addPet.scss';
+@import 'homePage.scss';
+@import '_button.scss';
+@import '_form.scss';
+@import 'checkoutFlow.scss';
+// @import '_cart.scss';
+@import 'header.scss';
+@import 'headerSearch.scss';
+@import 'chat.scss';
+
+
+@import 'productCard.scss';
+
+@import 'hotel.scss';
+
+@import 'product.scss';
+@import 'reserveConfirm.scss';
+@import 'activitySignup.scss';
+@import 'ActivityDetails.scss';
+@import 'Stepper.scss';
+@import 'course.scss';
+
+@import 'activity.scss';
+
+@import 'HomehotelGallery.scss';
+
+
+@import 'footer.scss';
+@import 'activity.scss';
+@import 'paginationn';
+@import 'HomehotelGallery.scss';
+
+
+

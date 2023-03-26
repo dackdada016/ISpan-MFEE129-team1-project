@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.member-container{
+    // position: relative;
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    min-height: calc(100vh - -60px);
+    .member-main{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 830px;
+        width: 100%;
+        .member-title{
+            font-size: 24px;
+            font-weight: 700;
+            color: #515151;
+            margin: 10px auto;
+        }
+        .member-subtitle{
+            font-size: 16px;
+            color: #515151;
+            // margin:25px 0px 5px 75px;
+            text-align: center;
+            word-wrap: break-word;
+        }
+        .member-form{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .member-label  input{
+                    // margin: 2px 10px;
+                    padding: 15px;
+                    border-radius: 15px;
+                    border:1px solid var(--field-frame);
+                    outline: none;
+                    width: calc(100% - 9px);
+                    &:focus{
+                        border-color:var(--field-frame);
+                        box-shadow: 0 0 0 0.25rem rgb(237 176 24/25%); 
+                    }
+                   
+            }
+            .member-label{
+                font-size: 20px;
+                position: relative;
+                width: 100%;
+                color: #c9c9c9;
+                margin-bottom: 10px;
+                // margin-left: 40px;
+                padding:9px;
+                // & #email::placeholder{
+                //     font-size: 12px;
+                // }
+               
+            }
+            .passwordGroup{
+                position:absolute;
+                right: 25px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #515151;
+            }
+            #member-label-policy{
+                text-align: center;
+                display: flex;
+                align-items: center;
+                margin-right:auto;
+                margin-bottom: 10px ;
+                padding: 10px;
+                font-size: 16px;
+                & #policy{
+                    padding: 10px;
+                }
+               }
+            .btn.btn-primary.btn-lg{
+                width:80%;
+            }
+            .example{
+                width: 100%;
+                display: flex;
+                justify-content:space-around;
+                padding:10px;
+                .correct-btn,.false-btn{
+                    border-radius: 15px;
+                    background-color: var(--primary);
+                    border:5px solid var(--primary);
+                    color: var(--text-white);
+                    font-size: 20px;
+                }
+            }
+        }   
+    }
+}
+
+@media screen and (max-width:768px) {
+  .member-container .member-main .member-form .member-label input {
+    width: 100%;
+  }
+}

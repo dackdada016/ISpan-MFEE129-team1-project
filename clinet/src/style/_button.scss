@@ -1,0 +1,210 @@
+.btn {
+  padding: var(--button-padding-LR) var(--button-padding-TB);
+  border-radius: var(--button-radius-1);
+  font-weight: bold;
+  color: var(--text-black);
+
+  .fa-caret-right {
+    vertical-align: middle;
+
+    path {
+      fill: var(--primary);
+    }
+  }
+}
+
+// .btn-lg{
+//   min-width: 300px;
+//   font-size: var(--font-size-h1) ;//可調整高度
+// }
+.btn-primary {
+  background-color: var(--light-blue);
+
+  border: 5px solid var(--light-blue);
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--text-white);
+  }
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  border: 5px solid var(--light-yellow);
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    background-color: var(--secondary);
+    border: 5px solid transparent;
+    color: var(--text-black);
+  }
+}
+
+.btn-primary-for-login {
+  background-color: var(--light-yellow);
+  border: 5px solid var(--light-yellow);
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--text-black);
+  }
+}
+
+Button.btn-outline-primary {
+  border: 5px solid var(--light-blue);
+  background-color: var(--text-white);
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    background-color: var(--text-white);
+    border-color: var(--primary);
+    color: var(--text-black);
+  }
+}
+Button.btn-outline-cart {
+  // border: 5px solid var(--light-blue);
+  color: var(--text-white);
+  background-color: transparent;
+  border: 0px solid transparent;
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    // background-color: var(--text-white);
+    // border-color: var(--primary);
+    color: var(--text-black);
+    transition: .3s;
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+
+
+.btn-outline-none{
+  background-color: var(--light-white);
+  color: var(--text-black) ;
+  &:hover,
+  &:active,
+  &:focus-visible{
+    background-color: var(--text-white);
+    color: var(--text-black);
+
+  }
+}
+.max-width-auto {
+  width: 100%;
+  background-color: var(--secondary);
+  border: 5px solid var(--secondary);
+  &:hover,
+  &:active,
+  &:focus-visible {
+    background-color: var(--light-yellow);
+    border: 5px solid var(--light-yellow);
+    color: var(--text-black);
+  }
+}
+.min-width-auto {
+  min-width: auto;
+}
+
+.btn-md {
+  font-size: var(--font-size-h4);
+}
+
+.btn-sm {
+  font-size: var(--font-size-h5);
+
+  //圓角5px
+  &.radius-5px {
+    border-radius: var(--button-radius-2);
+  }
+}
+
+//加減數量按鈕
+.calculate-btn-box {
+  display: flex;
+  align-items: center;
+}
+
+.calculate-btn {
+  &:disabled {
+    border: 0px solid #bcbcbc;
+    background-color: var(--light-yellow);
+
+    &::before {
+      color: #bcbcbc;
+    }
+  }
+}
+
+.dash {
+  background-color: var(--secondary);
+  border-radius: 15px 0 0 15px;
+  width: 30px;
+  height: 30px;
+  border: 0px solid #515151;
+  margin: 0 5px;
+
+  &::before {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    margin: 3px auto;
+    color: #515151;
+    content: '—';
+  }
+}
+
+.add {
+  position: relative;
+  background-color: var(--secondary);
+  border-radius: 0 15px 15px 0;
+  width: 30px;
+  height: 30px;
+  border: 0px solid #515151;
+  margin: 0 5px;
+
+  &::before {
+    // display: block;
+    // text-align: center;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: calc(50% - 10px);
+    line-height: 0;
+    font-size: 25px;
+    color: #515151;
+    margin: 0;
+    content: '+';
+  }
+}
+
+.btn:disabled,
+.btn.disabled,
+fieldset:disabled .btn {
+  background-color: var(--light-blue);
+  border-color: var(--light-blue);
+}
+
+.cancel-btn {
+  background: #ff5959;
+  color: var(--text-white);
+  font-weight: bolder;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 20px;
+  &:hover {
+    background-color: #e00000;
+    color: var(--text-white);
+  }
+}

@@ -1,0 +1,166 @@
+.homehotel-moreroom {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 25px;
+  padding-top:100px;
+  .homehotel-word{
+    color: black; 
+    text-shadow: black 0.1em 0.1em 0.2em;
+    font-size: 18px;
+  }
+}
+
+.homehotel {
+  display: flex;
+  .homehotel-box {
+    width: 20%;
+    .homehotel-zoomin {
+      overflow: hidden;
+      margin: 0;
+    
+      .homehotel-img {
+        display: inline-block;
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+
+.swiper-img {
+  width: 100%;
+}
+
+
+.new-word-box{
+  text-align: center;
+  padding-top: 100px;
+  font-size: var(--font-size-header);
+  color: var(--primary);
+  font-weight:700;
+  text-shadow: 3px 3px var(--light-blue-2);
+}
+// 最新消息樣式
+.new-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .new-box{
+    width: 80%;
+    .new{
+      width: 100%;
+      padding-bottom:50px;
+    
+      .new-img{
+          width: 100%;
+          height: 100%;
+          border-radius: 20px 20px 0 0;
+      }
+      .new-detail{
+        padding: 10px 50px;
+        background: var(--primary);
+        border-radius: 0 0 20px 20px;
+        .newcard-title{
+          font-size: 20px;
+          font-weight: bold;
+          color: var(--text-white);
+        }
+        .newcard-text{
+          font-size: 14px;
+          font-weight: bold;
+          color: var(--text-white);
+        }
+      }
+    }
+  }
+}
+
+
+//關於我們樣式
+.about-container{
+  background-image: url(../img/layout/homepageabout.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+
+  .card{
+    width: 90%;
+    height: 100vh;
+    max-width: 550px;
+    border-radius: 0%;
+    border-style:none;
+    backdrop-filter: blur(1rem);
+    .card-body{
+      display:flex;         
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+    }
+   
+  }
+  .cb1{
+    color: var(--text-black);
+    background-color: rgba(255, 255, 255, 0.700)
+  }
+  .card-start{
+    color:var(--text-black) ;
+    font-size: var(--font-size-header);
+    line-height:3;
+
+  }
+  .card-text{
+    line-height:3;
+  }
+}
+
+@media screen and (width<400px) {
+  .new-word-box {
+  font-size: var(--font-size-h1);
+  }
+  .new-container{
+    .new-box{
+      .swiper{
+        .swiper-wrapper{
+          .new{
+            .new-detail{
+              padding: 10px 15px;
+              .newcard-title{
+                font-size: var(--font-size-h4);
+              }
+              .newcard-text{
+                font-size: var(--font-size-h5);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .about-container{
+    .card-body{
+      .card-start{
+        font-size: var(--font-size-h1);
+      }
+      .card-title{
+        font-size: var(--font-size-h3);
+      }
+      .card-text{
+        font-size: var(--font-size-h3);
+      }
+    }
+  }
+  .homehotel-moreroom{
+    a{
+      .homehotel-word{
+        font-size: var(--font-size-p);
+      }
+    }
+  }
+ 
+  
+}

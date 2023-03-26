@@ -1,0 +1,181 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    // border: 1px solid pink;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    // height: calc(100vh - 40px);
+    padding: 2.5vmax 1.5vmax;
+
+    & .product-introduction {
+        display: flex;
+        justify-content: center;
+        margin-block: 1vmax;
+
+        & .product-photo-wrapper {
+            margin-inline: 1vmax;
+            width: clamp(30%, 50%, 500px);
+
+            & .product-photo {
+                width: 100%;
+                object-fit: cover;
+                border: 3px solid orange;
+                border-radius: 15px;
+            }
+        }
+
+        .product-information {
+            margin-inline: 1vmax;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            width: clamp(40%, 42%, 530px);
+            font-weight: 900;
+
+            .product-name {
+                font-size: 2rem;
+                margin: 0;
+            }
+
+            .product-unit {
+                font-size: 24px;
+            }
+
+            .product-article {
+
+                font-size: 24px;
+            }
+
+            .product-price {
+                margin-block-end: max(1vmax, 35px);
+                font-size: 24px;
+                margin: 0;
+                // font-weight: 900;
+            }
+
+            .product-button-wrapper {
+                display: flex;
+                justify-content: space-between;
+                font-size: 24px;
+
+                .product-add-collection {
+                    padding: 0.2vmax 4vmax;
+                    border-radius: 45px;
+                    border: 5px solid #DAF1FA;
+                    background-color: transparent;
+                    font-weight: 900;
+                    white-space: nowrap;
+                    margin-inline: 0.2vmax;
+                }
+
+                .product-add-cart {
+                    padding: 0.2vmax 4vmax;
+                    border-radius: 45px;
+                    background-color: #DAF1FA;
+                    border: none;
+                    font-weight: 900;
+                    white-space: nowrap;
+                    margin-inline: 0.2vmax;
+                }
+            }
+        }
+    }
+
+    .image-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+
+        img {
+            width: clamp(50%, 1280px, 60%);
+        }
+    }
+
+}
+
+@media screen and (max-width:768px) {
+
+    .product-introduction {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
+
+        .product-photo-wrapper {
+            margin: auto;
+            width: 100%;
+
+            & .product-photo {
+                width: 100%;
+                object-fit: cover;
+                border: 3px solid orange;
+                border-radius: 15px;
+            }
+        }
+
+        .product-information {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            // width: clamp(40%, 42%, 530px);
+            font-size: 1rem;
+
+            & .product-name {
+                font-size: 1rem;
+                margin: 0;
+            }
+
+            & .product-unit {
+                font-size: 1rem;
+            }
+
+            & .product-article {
+                font-size: 1rem;
+            }
+
+            & .product-price {
+                margin-block-end: max(1vmax, 35px);
+                font-size: 24px;
+                margin: 0;
+                // font-weight: 900;
+            }
+
+            & .product-button-wrapper {
+                display: flex;
+                justify-content: space-between;
+                font-size: 24px;
+
+                & .product-add-collection {
+                    padding: 0.2vmax 4vmax;
+                    border-radius: 45px;
+                    border: 5px solid #DAF1FA;
+                    background-color: transparent;
+                    font-weight: 900;
+                    white-space: nowrap;
+                    margin-inline: 0.2vmax;
+                }
+
+                & .product-add-cart {
+                    padding: 0.2vmax 4vmax;
+                    border-radius: 45px;
+                    background-color: #DAF1FA;
+                    border: none;
+                    font-weight: 900;
+                    white-space: nowrap;
+                    margin-inline: 0.2vmax;
+                }
+            }
+        }
+    }
+}

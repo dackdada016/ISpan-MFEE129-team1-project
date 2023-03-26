@@ -1,0 +1,289 @@
+
+.rd-wrap{
+  margin: auto;
+  padding:10px 40px;
+}
+
+.banner{
+    margin: auto;
+    // max-width: 1800px;
+    border-radius: 15px;
+    display: flex;
+    .rd-img-left{
+        margin: 10px 5px 10px 10px;
+        width: 50%;
+        height: 50vh;
+        background-image: url(../img/hotels/standard-double-room.jpg);
+        background-size: cover;
+            
+    }
+    .rd-img-right{
+        margin: 5px 0;
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+        
+        .img{
+            width: calc(50% - 10px);
+            margin: 5px;
+            height: 24.1vh;
+            background-size: cover;
+        }
+        .img1{
+            
+            
+            background-image: url(../img/hotels/toilet.jpg);
+        }
+        .img2{
+            
+            
+            background-image: url(../img/hotels/standard-round.jpg);
+        }
+        .img3{
+            
+            background-image: url(../img/hotels/standard-round1.jpg);
+        }
+        .img4{
+        
+            background-image: url(../img/hotels/standard-round2.jpg);
+        }
+    }
+}
+
+
+.rd-container{
+  display: flex;
+  margin: auto;
+  .rd-content-left {
+    padding: 1rem;
+    width: 50%;
+    ul{
+      padding-left: 1rem;
+      li{
+        list-style: circle;
+        font-size: var(--font-size-h5);
+        margin-top: 1rem;
+      }
+    }
+    span{
+      font-weight: bold;
+    }
+    .notice {
+      margin-top: 2rem;
+  }
+  }
+  .rd-content-right {
+    width: 49%;
+    border: 15px solid var(--light-blue);
+    border-radius: 10px;
+    background-color: var(--light-blue);
+    margin-left: 12px;
+    box-shadow: 0.5rem 0.75rem 1rem #bbbb;
+    .r-wrap{
+      margin: 0px;
+      padding: 30px;
+      border: 1px solid var(--light-blue);
+      background-color: white;
+      border-radius:calc(25px - 15px);
+    }
+  }
+  .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+  }
+}
+.price-day{
+    display: flex;
+    justify-content: space-between;
+}
+.price-pet{
+    display: flex;
+}
+.total-price{
+    display: flex;
+    justify-content: space-between
+}
+.r-btn-blue{
+    background-color: #DAF1FA;
+}
+
+// .r-wrap{
+//     border: 1px solid #515151;
+//     padding: 30px;
+// }
+.r-form{
+  margin: 30px 0;
+  .r-form-day{
+    display: flex;
+    justify-content: space-around;
+    input[type="text"] {
+      width: 100%;
+    }
+    .check-in {
+      padding-right: 5px;
+    }
+    .check-out{
+      padding-left: 5px;
+    }
+    .check-in,.check-out{
+      width: 50%;
+      p{
+        margin-bottom: 0;
+      }
+    }
+    p,span{
+        margin-top: 5px;
+    }
+    .r-form-child,.r-form-pet,.r-form-adult{
+        display: flex;
+        
+    }
+  }
+}
+.r-form-adult, .r-form-child, .r-form-pet{
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+
+.choose-pet-section{
+  display: flex;
+    img{
+
+        width: 100px;
+        // height: 100px;
+    }
+}
+.r-btn-box{
+  display: flex;
+  justify-content: space-evenly;
+  button{
+    width: 50%;
+  }
+  .mr-10px{
+    margin-right: 10px;
+  }
+  .ml-10px{
+    margin-left: 10px;
+  }
+}
+
+//月曆icon寫入
+.react-datepicker-wrapper {
+  input {
+    background: url(../img/hotels/calendar-plus-regular.svg) no-repeat 95%;
+    background-size: 20px;
+    border: 1px solid rgb(133, 133, 133);
+    border-radius: 8px;
+    padding: 0.375rem;
+    &.err-border {
+      border: 1px solid var(--bs-red);
+    }
+  }
+}
+
+.err-msg {
+  font-size: 14px;
+  color: var(--bs-red);
+}
+
+@media screen and (max-width: 992px) {
+  .rd-container{
+    .rd-content-left {
+      padding: 1rem 0;
+    }
+  }
+  .banner {
+    .rd-img-left {
+      margin: 10px 5px 10px 0px;
+    }
+    .rd-img-right{
+      .img {
+        width: calc(50% - 5px);
+        &:nth-child(odd){
+          margin: 5px 5px 5px 0;
+        }
+        &:nth-child(even){
+          margin: 5px 0 5px 5px;
+        }
+      }
+    }
+  } 
+  .rwd-container {
+    display: block;
+    &.card-wrap {
+      margin-right: 40px;
+    }
+    .rwd-col-12 {
+      width: 100%;
+      &.h-card {
+        width: calc(100% - 50px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .rd-content-left {
+    .title {
+      h1 {
+        font-size: calc(1rem + 1.5vw);
+      }
+      h2 {
+        font-size: calc(1rem + 0.9vw);
+      }
+    }
+    p {
+      font-size: var(--font-size-h5);
+      span {
+        font-size: var(--font-size-h4);
+      }
+    }
+    .notice {
+      span {
+        font-size: var(--font-size-h4);
+      }
+      ul li {
+        font-size: var(--font-size-h5);
+      }
+    }
+  }
+
+  .r-form-day {
+    p {
+      font-size: var(--font-size-h2);
+    }
+    input {
+      font-size: var(--font-size-h3);
+    }
+  }
+
+  .r-form-adult,.r-form-child,.r-form-pet {
+    p {
+      font-size: var(--font-size-h4);
+    }
+  }
+  .calculate-btn-box {
+    height: fit-content;
+  }
+
+  .r-price {
+    p {
+      font-size: var(--font-size-h5);
+    }
+  }
+
+  .r-btn-box {
+    button, svg {
+      font-size: medium;
+    }
+  }
+
+  .r-form .r-form-day .check-out {
+    padding-right: 5px;
+    padding-left: 0;
+  }
+}

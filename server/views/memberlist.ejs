@@ -1,0 +1,43 @@
+<%- include('parts/html-head') %>
+<%- include('parts/navbar') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col">會員編號</th>
+            <th scope="col">姓名</th>
+            <th scope="col">信箱</th>
+            <th scope="col">手機</th>
+            <th scope="col">生日</th>
+            <th scope="col">地址</th>
+            <th scope="col">會員狀態</th>
+            <th scope="col">創立時間</th>
+            <th scope="col">刪除</th>
+            <th scope="col">修改</th>
+            <th scope="col"><i class="fa-solid fa-paw"></i></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let s of data){ %>  <!--這邊不輸出，所以不加-或=-->
+          <tr>
+            <td><%=s.mid %></td>
+            <td><%=s.name %></td>
+            <td><%=s.email %></td>
+            <td><%=s.mobile %></td>
+            <td><%=s.birthday %></td>
+            <td><%=s.address %></td>
+            <td><%=s.member_status==1 ? '正常' :'停權' %></td>
+            <td><%=s.created_at %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table> 
+    </div>
+  </div>
+</div>
+
+<%- include('parts/scripts') %>
+<%- include('parts/html-foot') %>

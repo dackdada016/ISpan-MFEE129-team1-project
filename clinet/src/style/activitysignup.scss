@@ -1,0 +1,340 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.SignUp-page{
+    
+    display: grid;
+    align-items: center;
+    padding-bottom:10px ;
+    
+
+    .SignUp-head{
+        padding:70px 300px ;
+        margin-bottom: 100px;
+    }
+    .SignUp-body{
+        padding: 0 100px;
+        margin-bottom: 20px;
+    }
+
+
+    .step2-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0 50px;
+
+       .step2-form1{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        background: var( --light-blue);
+        border-radius: 30px;
+        
+            .step2-form1-title{
+                background-color: var(--primary);
+                border-radius: 20px ;
+                .step-form1-word{
+                    color: var(--text-white);
+                    font-weight: bolder;
+                    padding-top: 15px;
+                    text-align: center;
+                }
+            }
+            
+            .step-table-wrap{
+                display: flex;
+                flex-direction: row;
+                height: auto;
+                padding: 15px;
+                margin: 10px 0 ;
+
+                .step-table-title{
+                    width: 35%;
+                    padding-left: 20px;
+                    border-right: 2px solid white;
+                    font-weight: bold;
+                    color: var(--text-black);
+                    font-size: var(--font-size-h2);
+                }
+                
+                .step-table-description{
+                    width: 65%;
+                    padding-left: 46px;
+                    color: var(--text-black);
+                    font-weight: bold;
+                    font-size: var(--font-size-h2);
+                }
+
+                .pet-select{
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 65%;
+
+                    .pet-select-box{
+                        padding-left: 46px;
+                        color: var(--text-black);
+                        font-weight: bold;
+                        margin: 1px;
+                        font-size: var(--font-size-h2);
+
+                    }
+                }
+                
+            }     
+         }
+
+       .step-form2{
+            @extend .step2-form1;
+            width: 35%;
+
+            .step2-form-text{
+                font-weight: bold;
+                color: var(--text-black);
+                font-size: var(--font-size-h2);
+            }
+
+            .addpet-form{    
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                padding: 40px;
+                margin-bottom: 5px;
+
+              .addpet-control{
+                    background: white;
+                    width:100%;
+                }
+
+                .addpet-select{
+                    @extend .step2-form-text;
+                    display:flex;
+                    flex-direction: column;
+                    margin: 20px 0;
+                    
+                }
+
+                .signupbtn-box{
+                    display:flex;
+                    justify-content: space-around;
+                }
+            }              
+        }
+
+
+       
+    }
+    .step3{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .checkmark-container{
+            background-color: var(--text-black);
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px;
+            
+            .checkmark-svg{
+                stroke: white;
+                width: 100px;
+            }
+        }
+        .checkmark-foot{
+            @extend .step3;
+            border-top: 3px solid var(--light-blue);
+            width: 80%;
+            padding: 50px;
+            text-align: center;
+
+            .btn-to-Record{
+                text-decoration:none;
+                color:var(--text-black);
+                font-weight: bolder;
+                padding: 25px;
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+//手機RWD
+@media screen and (width<500px){
+
+    .SignUp-page { 
+       .SignUp-head{
+            padding: 90px;
+            margin-bottom: 50px;
+            .step.completed,.step {
+                width: 50px;
+                height: 50px;
+                .stepper-number {
+                    font-size: 20px;
+                }
+                .stepper-text {
+                    font-size: 10px;
+                }
+            }
+       }
+
+       .SignUp-body{
+        padding: 0;
+        margin-bottom: 0;
+        .checkoutFlow {
+            max-width: 80vw;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            flex-direction: column;
+            gap: 28px;
+
+            .tabs {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 5px auto;
+                max-width: none;
+                font-family: sans-serif;
+                .tabs__content{
+                    table{
+                        display: flex;
+                        thead,tbody{
+                            height: none;
+                            flex-direction: none;
+                            justify-content: space-evenly;
+                            tr{
+                            display: flex;
+                            flex-direction: column;
+                            
+                                th,td{
+                                    width: 100px;
+                                    font-size: var(--font-size-h5);
+                                    margin:30px 2px;
+                                }
+                            
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .btn-primary {
+            margin: 0 40px;
+            width: 80px;
+            font-size: var(--font-size-h5);
+        }
+
+        .step2-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 20px;
+
+            .step2-form1{
+                width: 100%;
+                margin-bottom: 20px;
+                .step-form1-word{
+                    font-size: var(--font-size-h3);
+                }
+
+                .step-table-wrap{
+                    flex-direction: column;
+
+                    .step-table-title{
+                        width: 100%; 
+                        padding-left: 20px;
+                        border-right: none;
+                        font-size: var(--font-size-h5);
+                        }
+
+                    .step-table-description{
+                        width: 100%; 
+                        padding-left: 20px;
+                        font-size: var(--font-size-h4);
+                    }
+                    .pet-select{
+                        width: 100%;
+                        font-size: var(--font-size-h5);
+                        .pet-select-box{
+                            font-size: var(--font-size-h4);
+                            margin:10px 0;
+                        }
+                    }
+                }
+            }
+            .addpet-form{
+                .step2-form-text{
+                    font-size: var(--font-size-h4); 
+                }
+                
+            }
+        }
+       }
+    }
+}
+
+//平板RWD
+@media screen and (min-device-width:500px) and (max-device-width:1400px) {
+    .SignUp-page {
+        align-items: center;
+        display: grid;
+
+        .SignUp-head {
+            padding: 100px 150px;
+            margin-bottom: 100px
+        }
+
+        .SignUp-body {
+            padding: 0 70px;
+
+            thead,tbody{
+                tr{
+                    th,td{
+                        font-size: var(--font-size-h4);
+                    }
+                
+                }
+            }
+
+            .step2-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 0;
+
+                .step2-form1{
+                    width: 100%;
+                    margin-bottom: 20px;
+
+                    .step-table-wrap{
+                        flex-direction: column;
+
+                        .step-table-title{
+                            width: 100%; 
+                            padding-left: 20px;
+                            border-right: none;
+                            }
+
+                        .step-table-description{
+                            width: 100%; 
+                            padding-left: 20px;
+                        }
+                        .pet-select{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        
+        }
+    }
+}
+    

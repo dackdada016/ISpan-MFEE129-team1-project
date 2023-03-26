@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+aside {
+  margin: 15px 0;
+}
+
+.order-step-guide {
+  margin: 15px auto;
+
+  .row {
+    display: flex;
+    max-width: 100vw;
+    gap: 10px;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+}
+
+.step_group {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  .step1,
+  .step2,
+  .step3 {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    min-height: 100px;
+    margin: 0;
+    font-family: 'Tahoma';
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: #733b3b 2px 2px 1px;
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 50% 50%;
+    background-color: var(--light-blue);
+  }
+
+  .stepState {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    min-height: 100px;
+    margin: 0;
+    font-family: 'Tahoma';
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: #733b3b 2px 2px 1px;
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 50% 50%;
+    background-color: var(--primary);
+  }
+}
+
+.stepline {
+  width: 150px;
+  height: 2px;
+  transition: width 1s ease;
+  background-color: var(--light-blue-2);
+
+  &.lineState {
+    width: 150px;
+    background: linear-gradient(
+      to right,
+      var(--light-blue),
+      #b7ebff,
+      #8adeff,
+      var(--primary)
+    );
+  }
+}
+
+.steptext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 126px;
+  color: #000;
+  margin: 0;
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.checkoutFlow {
+  max-width: 80vw;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px auto;
+  /* max-width: 400px; */
+  font-family: sans-serif;
+}
+
+.tabs__label {
+  padding: 10px 10px 5px 10px;
+  line-height: 24px;
+  cursor: pointer;
+  background-color: #daf1fa;
+  border-radius: 5px 5px 0 0;
+}
+
+.tabs__radio {
+  display: none;
+}
+
+.tabs__content {
+  order: 1;
+  width: 100%;
+  line-height: 1.5;
+  font-size: 0.9em;
+  display: none;
+}
+
+.tabs__radio:checked + .tabs__label {
+  background-color: #47bbe8;
+  font-weight: bold;
+  color: #000;
+  border-bottom: 2px solid #47bbe8;
+}
+
+.tabs__radio:checked + .tabs__label + .tabs__content {
+  /* 恢復預設(display) */
+  display: initial;
+}
+
+table {
+  /* background-color: #DAF1FA; */
+  border: 10px solid #daf1fa;
+  border-radius: 0 10px 10px 10px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  table-layout: fixed;
+  text-align: center;
+}
+
+td {
+  background-color: #fff;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+tbody > tr:last-child > td {
+  margin: 0;
+}
+
+th {
+  background-color: #daf1fa;
+  padding-bottom: 5px;
+}
+
+td > img {
+  max-width: 100%;
+}
+
+tr > td:first-child {
+  align-items: center;
+  margin: auto;
+  padding: 3px;
+  width: 100px;
+  height: 100px;
+  position: relative;
+
+  & img {
+    height: 100px;
+  }
+}
+
+.checkout-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.total-amount {
+  margin-right: 10px;
+}
+
+.continue-shopping-btn {
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: #fff;
+  border: 3px solid #daf1fa;
+  border-radius: 45px;
+  padding: 10px 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.continue-shopping-btn:hover {
+  background-color: #fff;
+  border: 3px solid #47bbe8;
+}
+
+.next-step-btn {
+  cursor: pointer;
+  background-color: #daf1fa;
+  border: 3px solid #daf1fa;
+  border-radius: 45px;
+  padding: 10px 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.next-step-btn:hover {
+  background-color: #47bbe8;
+  border: 3px solid #47bbe8;
+}
+
+.recommended-product {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.recommended-product > h1 {
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+.product-title::after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  border-top: 1px solid #db9566;
+}
+
+.button_group {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}

@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.activity-container{
+    margin: auto;
+    padding:20px 60px;  
+    display:flex;
+
+    .container-box{
+    font-size: 16px;
+    flex: 1;
+    border-radius: 16px;
+    word-break: break-word;
+    display:grid;
+    grid-gap:20px ;
+
+    .activity-photo{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+      }
+    
+    }
+   
+
+    .activity-title{
+    font-size: var(--font-size-header);
+    font-weight: bold;
+    }
+    
+
+    .activity-informationbox{
+        box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+        padding-left: 20px;
+        border-radius: 16px;
+
+        .activity-information{
+            font-size: 20px;
+            letter-spacing: 2px;
+            padding: 5px;
+        }
+    }
+
+
+    .content-h5{
+        font-size: var(--font-size-h1);
+        border-left:  10px solid var( --secondary);
+        padding: 5px;
+        font-weight: bolder;
+        color: var(--text-black);
+    }
+
+    .content-p{
+        font-size: var(--font-size-h1);
+        padding: 10px;
+        color: var(--text-black);
+        letter-spacing: 2px;
+        line-height: 3;
+    }
+
+    .content-p2{
+        font-size: var(--font-size-h1);
+        padding: 10px;
+        color: var(--text-black);
+        letter-spacing: 2px;
+    }
+
+    .activity-photo2{
+        width: 70%;
+        margin-bottom: 50px;
+        border-radius: 5px;
+        
+    }
+    
+}
+        
+.activity-text{
+    width: 300px;
+    padding-left: 25px;
+    .activity-textbox{
+        top: 50px;
+        position: sticky;
+        box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+        border-radius: 30px;
+        padding: 24px 24px;
+
+        .activity-textbox-text{
+            font-size: var(--font-size-h5);
+            color: gray;
+
+        }
+
+        .timeout{
+            font-size: var(--font-size-h1);
+            color: var(--field-frame);
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        .linkbox{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 20px;
+
+            .calendaricon{
+                color: #aaa;
+                &:hover{
+                    color:black ;
+                }
+            }
+            .facebookicon{
+                @extend  .calendaricon;
+                &:hover{
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+        
+}
+
+//手機RWD
+@media screen and (width<400px) {
+    .activity-container {
+        margin: auto;
+        padding:0; 
+        display:flow-root;
+        .container-box {
+            padding: 15px;
+
+            .activity-photo {
+                border-radius: 10px;
+            }
+            .activity-title {
+                font-size: var(--font-size-h3);
+                background:none;
+            }
+            .activity-informationbox {
+                padding-top: 10px;
+
+                .activity-information{
+                    font-size: var(--font-size-h5);
+                }
+               
+            }
+            .content-h5 {
+                font-size: var(--font-size-h4);
+                border-left:  10px solid var(--primary);
+            }
+            .content-p {
+                font-size: var(--font-size-h5);
+                padding: 0 10px;
+            }
+            .activity-photo2{
+                border-radius: 10px;
+                margin-bottom: 25px;
+                width: 100%;
+            }
+            .content-p2 {
+                font-size: var(--font-size-h5);
+                padding: 0 10px;
+            }        
+        }
+        .activity-text {
+            width: 100%;
+            position: sticky;
+            padding-left: 0;
+            bottom: 0;
+            background: white;
+
+            .activity-textbox{
+                border-radius: 0; 
+                padding:0; 
+                box-shadow: none;
+
+                p{
+                    display: none;
+                }
+                .timeout{
+                    // font-size: var(--font-size-h5);
+                    color: var(--text-black);
+                    font-weight:bold;
+                    border: 2px solid var(--text-black);
+                }
+                .linkbox{
+                    margin-top: 0;
+                    background: aliceblue;
+                    padding: 5px 0;
+                    border-radius: 0;
+                }
+                .max-width-auto {
+                    width: 100%;
+                    border-radius: 1px;
+                    background-color: #47bbe8;
+                    border: 0px solid var(--secondary);
+                }
+            }
+        }
+
+    }
+   
+}
+
+//平板RWD
+@media screen and (min-device-width: 400px) and (max-device-width: 800px){
+    .activity-container {
+        margin: auto;
+        padding: 20px 60px 0 60px;
+        display:flow-root;
+        .container-box {
+            font-size: 16px;
+            flex: 1 1;
+            border-radius: 16px;
+            word-break: break-word;
+            padding-right: 20px;
+            display: grid;
+            grid-gap: 20px;
+
+            .activity-photo2{
+                width: 100%;
+                margin-bottom: 50px;
+                border-radius: 30px;
+                
+            }
+        }
+
+        .activity-text {
+            position: sticky;
+            bottom: 0;
+            background: white;
+            width: 100%;
+            padding: 0;
+
+            .activity-textbox {
+                bottom: 0px;
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                p{
+                    display: none;
+                }
+
+                .timeout{
+                    color: var(--text-black);
+                    font-weight:bold;
+                    border: 2px solid var(--text-black);
+                    padding: 5px 50px;
+                }
+                .linkbox {
+                    display: flex;
+                    margin-top: 20px;
+                    width: 20%;
+                 }
+                a{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+

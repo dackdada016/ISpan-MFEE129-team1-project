@@ -1,0 +1,59 @@
+.fa-circle-user{
+  height:50px ;
+}
+// .fa-circle-user.avatarNone{
+//   display: none;
+// }
+.img{
+  width: 200px;
+  height: 200px;
+}
+// .addPet {
+//   display:flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+//   align-items: center;
+// }
+.h1{
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-black);
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+}
+.span{
+    font-size: var(--font-size-h4);
+    display:flex;
+    margin-right: center;
+    margin-bottom: 10px;
+    
+}
+.faCirclePlus{
+    width:15px;
+    height: 15px;
+    margin: auto;
+    border: 5px solid var(--secondary) ;
+    border-radius: 15px;
+}
+.pet{
+  display: flex;
+  width: 100%;
+  justify-content:space-between;
+}
+.form-select{
+ width: 40%;
+ border-radius: 15px;
+
+ padding: 10px;
+}
+.click{
+  // display: flex;
+  // justify-content: space-between;
+  .btn.btn-primary.btn-lg{
+    min-width: 50%;
+  }
+  .btn.btn-outline-primary.btn-lg{
+    min-width: 50%;
+  }
+}

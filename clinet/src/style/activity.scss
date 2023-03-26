@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+
+.activity-home-swiper{
+    margin-bottom: 100px;
+}
+
+
+.activity-card-page{
+    width: 100%;
+
+    .activity-cards{
+        width: 80%;
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        grid-gap:40px;
+        .acard{
+            box-shadow: 0 4px 8px 0 rgba(142, 142, 142, 0.1) ;
+            border-radius: 20px;
+            overflow: hidden;
+            &:hover{
+                transform: translateY(-0.5rem);
+                box-shadow: 0.5rem 0.75rem 1.5rem #bbbb;
+            }
+
+            .activity-card-img{
+                width: 100%;
+                
+            }
+
+            .activity-card-content{
+                padding: 10px 20px 20px 20px;
+
+                .activity-card-title{
+                    font-size: var(--font-size-h2);
+                    font-weight: bolder;
+                    letter-spacing: 1.5px;
+                    color: var(--text-black);
+                    margin:5px 0 ;
+                }
+
+                .activity-card-p{
+                    font-size: var(--font-size-p);
+                    color: #aaa;
+                    letter-spacing: 1.5px;
+                 
+                }
+                .timeout{
+                  font-size: var(--font-size-h2);
+                  color: var(--field-frame);
+                  font-weight: bolder;
+                }
+            }
+        }
+    }
+}
+
+.activity-title{
+  width: 80%;
+  margin: auto;
+  .activity-banner-word{
+    color: var(--text-black);
+    font-size: 40px;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+  }
+  .activity-title-box{
+    display: flex;
+    justify-content: flex-end;
+    .activity-searchbar{
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      padding: 3px 10px;
+      background: #fff9bb;
+        .activity-search-input{
+          font-size: var(--font-size-h4);
+        }
+    }
+  .activity-tag{
+    background: #fff9bb;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    margin: 0 5px;
+    font-size: var(--font-size-h4);
+    &:hover{
+      background-color: var( --secondary);
+    }
+    }
+  }
+}
+
+
+@media screen and (width<400px) {
+  .activity-title {
+    text-align: center;
+    .activity-banner-word{
+      font-size: var(--font-size-h1);
+    }
+    .activity-title-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .activity-search-tags{
+        margin-bottom: 5px;
+        .activity-tag{
+          font-size: var(--font-size-h5);
+        }
+      }
+    }
+  }
+  
+  .activity-card-page{
+    margin: auto;
+    padding: 0;
+
+    
+    .activity-cards {
+      width: 100%;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      padding: 20px;
+
+      .acard{
+        .activity-card-content{
+          .activity-card-title {
+            font-size: var(--font-size-h4);
+          }
+        }
+      }
+      
+    }
+  }
+  .content{
+    .pagination-bar {
+      margin: 50px 0;
+  
+      .active,.nothing {
+          font-size: 12px;
+          margin: 0 1px;
+      }
+    }
+  }
+}

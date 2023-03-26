@@ -1,0 +1,61 @@
+.h-text-title{
+  font-size: var(--font-size-header);
+  font-weight: bold;
+  margin: 25px 0 0 50px;
+}
+
+.h-banner {
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .h-banner {
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 230px;
+    }
+  }
+
+  .h-card {
+    margin-bottom: 40px;
+    &:nth-child(odd) {
+      margin: 20px 80px 40px 20px;
+  }
+  }
+
+  .h-text-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 25px 0 0 25px;
+  }
+
+  .h-card-left .h-card-header h3 {
+    font-size: var(--font-size-h2);
+    font-weight: bold;
+  }
+
+  .h-card-left {
+    .h-card-header {
+      .h-card-subtitle {
+        font-size: var(--font-size-h3);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      .h-card-text {
+        font-size: var(--font-size-p);
+        margin-bottom: 0;
+      }
+    }
+    .h-card-footer {
+      button {
+        a {
+          font-size: medium;
+        }
+      }
+    }
+  }
+}

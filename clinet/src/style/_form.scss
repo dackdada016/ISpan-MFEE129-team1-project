@@ -1,0 +1,36 @@
+.form-control{
+  border: 1px solid var(--field-frame);
+  &:focus{
+    border-color:var(--field-frame);
+    box-shadow: 0 0 0 0.25rem rgb(237 176 24 / 25%);
+  }
+}
+.form-check-input{
+  border: 1px solid var(--field-frame);
+  &:focus{
+    
+    box-shadow: 0 0 0 0.25rem rgb(237 176 24 / 25%);
+  }
+  &:checked{
+    background-color: var(--field-frame);
+    border-color: #e6ab23;
+  }
+}
+.form-select{
+  width: 100%;
+  border: 1px solid var(--field-frame);
+  &:focus{
+    border-color:var(--field-frame);
+    box-shadow: 0 0 0 0.25rem rgb(237 176 24 / 25%);
+  }
+}
+.form-container{
+  max-width: 1153px;
+  margin: 30px auto;
+  .pl-1{
+    padding-left: 1rem;
+  }
+  .pr-1{
+    padding-right: 1rem;
+  }
+}

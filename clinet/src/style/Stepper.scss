@@ -1,0 +1,36 @@
+div.RSPBprogressBar{
+    width: auto;
+    background: var(--light-blue);
+}
+div.RSPBprogression{
+    background: linear-gradient(to right,#f4fcff, #47BBE8 ) !important;
+}
+.step{
+    color: #bbb;
+    width: 100px;
+    height: 100px;
+    background: var(--light-blue);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step.completed{
+    background-color: var(--primary) ;
+    color: var(--text-white);
+    font-weight: bolder;
+}
+.stepper-text{
+    position: absolute;
+    bottom: -30px;
+    font-size: 20px;
+    color: var(--text-black);
+}
+
+.stepper-number{
+    font-size: 50px;
+    font-weight: bolder;
+    color: var(--text-white);
+}
+

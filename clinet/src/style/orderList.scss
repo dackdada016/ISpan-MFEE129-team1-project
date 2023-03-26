@@ -1,0 +1,24 @@
+.orderTitle{
+  text-align: center;
+  margin: 50px auto;
+}
+.click{
+  display: flex;
+  text-align: center;
+  // align-items:flex-start;
+  border: none;
+  background: none;
+  cursor: pointer;
+  p{
+    margin: 0;
+  }
+}
+.checkoutFlow{
+  .more-button{
+    cursor: pointer;
+    color: var(--light-blue);
+    &:hover{
+      color: var(--primary);
+    }
+  }
+}
