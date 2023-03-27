@@ -5,13 +5,19 @@
 
 
 ## 如何使用
-### 前端React
+### 前端 React(版本號^18.2.0)
 #### `npm install -g yarn ` clinet資料夾安裝yarn管理工具
 #### `yarn install ` clinet資料夾使用install即可安裝使用套件
 
-### 後端Sever
-#### 下載 Node.js https://nodejs.org/en
+### 後端 Sever
+#### 下載 Node.js(版本號v18.12.1) https://nodejs.org/en
 #### `npm install ` Server資料夾安裝使用套件
+套件版本 
+"ejs": "^3.1.8",
+"express": "^4.18.2",
+"express-mysql-session": "^2.1.8",
+"mysql2": "^3.0.1",
+"dotenv": "^16.0.3",
 
 ### 資料庫為MySQL
 
