@@ -5,7 +5,6 @@
 
 
 ## 如何使用
----
 ### 前端 React(版本號^18.2.0)
 #### `npm install -g yarn ` clinet資料夾安裝yarn管理工具
 #### `yarn install ` clinet資料夾使用install即可安裝使用套件
