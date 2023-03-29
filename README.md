@@ -45,7 +45,6 @@
   2. pages > 所有功能頁面
   3. template > 共用元件放置的資料夾
   4. style > 樣式所在資料夾
->  __.gitignore__ 必須將node_modules加入，避免巨大的套件模組資料被上傳
 ### server
 > index.js 為 middleware 及 routes 相關設定
 1. modules > SQL連線相關設定及圖片上傳設定
