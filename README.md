@@ -8,10 +8,13 @@
 ### 前端 React(版本號^18.2.0)
 #### `npm install -g yarn ` clinet資料夾安裝yarn管理工具
 #### `yarn install ` clinet資料夾使用install即可安裝使用套件
+#### `yarn start ` 開始使用本專案
 
 ### 後端 Sever
 #### 下載 Node.js(版本號v18.12.1) https://nodejs.org/en
 #### `npm install ` Server資料夾安裝使用套件
+#### ` nodemon ` 終端機執行啟用後台管理網頁
+
 套件版本 
 "ejs": "^3.1.8",
 "express": "^4.18.2",
