@@ -2,8 +2,9 @@
 > 此專案為ISpan 前端工程師就業養成班 129 期 第一組 毬 project  <br />
 > 打造讓使用者在本網站上輕鬆查找資訊並購買寵物有關商品的網頁。
 
-## 協作者
+## 開發組員
 *  [Chu-Ya Hsu](https://github.com/410302007) 
+*  [dackdada016](https://github.com/dackdada016) 
 *  [Jin22221](https://github.com/Jin22221) 
 *  [4A555076](https://github.com/410302007) 
 *  [Eric Tsai](https://github.com/hiphop200199) 
