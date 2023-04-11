@@ -3,12 +3,12 @@
 > 打造讓使用者在本網站上輕鬆查找資訊並購買寵物有關商品的網頁。
 
 ## 開發組員
-*  [Chu-Ya Hsu](https://github.com/410302007) 
-*  [dackdada016](https://github.com/dackdada016) 
-*  [Jin22221](https://github.com/Jin22221) 
-*  [4A555076](https://github.com/410302007) 
-*  [Eric Tsai](https://github.com/hiphop200199) 
-*  [zackliuzicheng](https://github.com/zackliuzicheng) 
+*  會員 :[Chu-Ya Hsu](https://github.com/410302007) 
+*  商城、購物結帳 :[dackdada016](https://github.com/dackdada016) 
+*  住宿 :[Jin22221](https://github.com/Jin22221) 
+*  活動 :[4A555076](https://github.com/410302007) 
+*  課程 :[Eric Tsai](https://github.com/hiphop200199) 
+*  餐點 :[zackliuzicheng](https://github.com/zackliuzicheng) 
 
 ## 使用技術/工具 :
 *  框架 - React
